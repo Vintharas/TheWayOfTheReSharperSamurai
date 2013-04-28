@@ -4,8 +4,8 @@ namespace Katas
 {
 
     /* 
-     * Kata 01. Improve
-     * *********************
+     * Kata 01. Improve. Exercise 01
+     * *****************************
      * Use ReSharper "improve" shortcuts to refactor the contents of this file
      * 
      * 
@@ -22,13 +22,23 @@ namespace Katas
      * Safe delete => CTRL+R,D or ALT+DEL
      * Quick Fixes, Contextual Actions => ALT+ENTER
      * 
+     * Extend selection: CTRL+SHIFT+Right Arrow
+     * Shrink selection: CTRL+SHIFT+Left Arrow
      * 
      * Tip: 
      * - Download and print ReSharper keymap from http://www.jetbrains.com/resharper/documentation/index.jsp
      * - Try not to use the mouse and rely solely on the keyboard
      */
 
-    public class Class1
+    public interface IDamageCalculator
+    {
+        double CalculateDamage(Weapon weapon, IEnumerable<Armor> armor);
+    }
+
+    #region Tip
+    /* Rename class: CTRL+R,R*/
+    #endregion
+    public class Class1 : IDamageCalculator
     {
         private readonly IDie die;
 
@@ -40,14 +50,23 @@ namespace Katas
         public double CalculateDamage(Weapon weapon, IEnumerable<Armor> armor)
         {
             var dieRoll = die.Roll();
+            #region Tip
+            /* Rename variable: CTRL+R,R*/
+            #endregion
             var temp = 0d;
+            #region Tip
+            /* Extract Method for logical expression: CTRL+R,R*/
+            #endregion
             if (dieRoll == 0) // Utmost failure
             {
-                temp = 0;
+                temp = 0d;
             }
             else if (dieRoll > 0 && dieRoll < 25) // Penalized Attack
             {
                 var totalDefence = 0d;
+                #region Tip
+                /* Extract Method: CTRL+R,R*/
+                #endregion
                 foreach (var pieceOfArmor in armor)
                     totalDefence += pieceOfArmor.Defence;
                 temp = 0.5*weapon.Damage - totalDefence;

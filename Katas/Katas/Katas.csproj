@@ -40,12 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Katas_01_Improve\Class1.cs" />
+    <Compile Include="Katas_01_Improve\Class2.cs" />
     <Compile Include="Katas_02_Explore\Character.cs" />
     <Compile Include="Katas_02_Explore\DrawableGameObject.cs" />
     <Compile Include="Katas_02_Explore\GameObject.cs" />
     <Compile Include="Katas_02_Explore\Monster.cs" />
     <Compile Include="Katas_02_Explore\Samurai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Katas_03_Create\" />
+    <Folder Include="Katas_04_TDD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
