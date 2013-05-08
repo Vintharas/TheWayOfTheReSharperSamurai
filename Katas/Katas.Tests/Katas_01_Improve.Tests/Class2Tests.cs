@@ -12,18 +12,18 @@ namespace Katas.Tests
          {
              // Arrange
              var mightyKatana = new Weapon();
-             var conan = new Class2 {name = "Miyamoto Musashi", rightHandWeapon = mightyKatana};
+             var miyamotoMusashi = new Class2 {name = "Miyamoto Musashi", rightHandWeapon = mightyKatana};
 
-             var majesticRobes = new Armor();
-             var evilWizard = new Class2 {name = "Shadow Ninja", currentHitPoints = 100d, torso = majesticRobes};
-             var evilWizardsArmor = new List<Armor>{ majesticRobes };
+             var shadowCloak = new Armor();
+             var shadowNinja = new Class2 {name = "Shadow Ninja", currentHitPoints = 100d, torso = shadowCloak};
+             var shadowNinjasArmor = new List<Armor>{ shadowCloak };
 
              var damageCalculator = new Mock<IDamageCalculator>();
-             damageCalculator.Setup(dc => dc.CalculateDamage(mightyKatana, evilWizardsArmor)).Returns(50d);
+             damageCalculator.Setup(dc => dc.CalculateDamage(mightyKatana, shadowNinjasArmor)).Returns(50d);
              // Act
-             conan.Attack(evilWizard, damageCalculator.Object);
+             miyamotoMusashi.Attack(shadowNinja, damageCalculator.Object);
              // Assert
-             Assert.That(evilWizard.currentHitPoints, Is.EqualTo(50d));
+             Assert.That(shadowNinja.currentHitPoints, Is.EqualTo(50d));
          }
     }
 }
