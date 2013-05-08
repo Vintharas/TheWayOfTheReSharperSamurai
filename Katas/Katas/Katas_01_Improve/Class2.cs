@@ -101,9 +101,9 @@ namespace Katas
         public abstract IEnumerable<Perk> Perks { get; } 
     }
 
-    public class Barbarian : Class
+    public class Samurai : Class
     {
-        public override string Name { get { return "Barbarian"; } }
+        public override string Name { get { return "Samurai"; } }
         public override IEnumerable<Perk> Perks
         {
             get
@@ -111,14 +111,15 @@ namespace Katas
                 return new List<Perk>
                     {
                         new Perk {Name = "Might I"},
-                        new Perk {Name = "Intimidate I"}
+                        new Perk {Name = "Intimidate I"},
+                        new Perk {Name = "Honor"}
                     };
             }} 
     }
 
-    public class BladeMaster : Class
+    public class Ninja : Class
     {
-        public override string Name { get { return "BladeMaster"; } }
+        public override string Name { get { return "Ninja"; } }
         public override IEnumerable<Perk> Perks
         {
             get
